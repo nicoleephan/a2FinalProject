@@ -12,6 +12,8 @@ struct ProfileView: View {
   @State private var showTextField = false
   @State private var inputText = ""
   @State private var allergies: [String] = []
+    @State private var allergiesDisplay: [String] = []
+
   var body: some View {
     ZStack {
         Color(hex: "#EADDCA")
@@ -75,24 +77,27 @@ struct ProfileView: View {
               .textInputAutocapitalization(.never)
             if inputText != "" {
               Button(action: {
-                allergies.append(inputText)
+                  allergiesDisplay.append(inputText)
+                  allergies.append(inputText.lowercased())
+                  
                 inputText = ""
                 ing = allergies.joined(separator: ",")
+                 
                 withAnimation {
                   showTextField.toggle()
                 }
               }) {
-                Text("Calculate")
+                Text("Save")
                       .fontWeight(.bold)
               }
             }
           }
           Text("Restrictions noted:")
             .padding(5)
-          if allergies.isEmpty {
+          if allergiesDisplay.isEmpty {
             Text("None at the moment...")
           } else {
-            ForEach(allergies, id: \.self) { allergy in
+            ForEach(allergiesDisplay, id: \.self) { allergy in
               Text(allergy)
             }
               
