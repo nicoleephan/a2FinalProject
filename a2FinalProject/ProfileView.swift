@@ -20,12 +20,15 @@ struct ProfileView: View {
           Spacer()
             .frame(height: UIScreen.main.bounds.height / 44) // tried to change # here to see if it would push everything up further but doesn't
         Text("Profile Page")
-          .font(.largeTitle)
-          .fontWeight(.bold)
-          .multilineTextAlignment(.center)
+              .font(.largeTitle)
+              .fontWeight(.bold)
+              .multilineTextAlignment(.center)
+              .padding(.bottom, 21)
+              .foregroundColor(Color(hex: "#5C4033"))
         
           
         TextField("Enter your name", text: $name)
+              .fontWeight(.bold)
               .padding()
               .textFieldStyle(RoundedBorderTextFieldStyle())
               .frame(maxWidth: 351)
@@ -34,6 +37,7 @@ struct ProfileView: View {
           savedName = name
         }) {
           Text("Save Name")
+                .fontWeight(.bold)
                 .padding()
                 .frame(maxWidth: 215)
                 .background(Color(hex: "#C4A484"))
@@ -59,7 +63,9 @@ struct ProfileView: View {
               showTextField.toggle()
             }
           }) {
-            Text("Add Allergy/ Dietary Restriction")
+            Text("Add Allergy/Dietary Restriction")
+                  .fontWeight(.bold)
+              
           }
           if showTextField {
             TextField("Type food", text: $inputText)
@@ -77,6 +83,7 @@ struct ProfileView: View {
                 }
               }) {
                 Text("Calculate")
+                      .fontWeight(.bold)
               }
             }
           }
@@ -92,6 +99,7 @@ struct ProfileView: View {
               NavigationLink(destination: calc()) {
                 Text("Calculate")
                   .font(.headline)
+                  .fontWeight(.bold)
                   .padding()
                   .frame(maxWidth: 215)
                   .background(Color(hex: "#C4A484"))

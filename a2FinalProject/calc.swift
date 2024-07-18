@@ -256,6 +256,7 @@ struct calc: View {
                 VStack {
                     TextField("Enter recipe name", text: $name)
                         .padding()
+                        .fontWeight(.bold)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 351)
                     
@@ -264,6 +265,7 @@ struct calc: View {
                         viewModel.fetchFirstRecipe(name: name)
                     }
                     .padding()
+                    .fontWeight(.bold)
                     .frame(maxWidth: 215)
                     .background(Color(hex: "#C4A484"))
                     .foregroundColor(.white)
@@ -280,13 +282,26 @@ struct calc: View {
                                 Text("ALERT")
                                     .foregroundColor(.red)
                                     .bold()
+                                   
                             }
+                            
                         }
                         .padding(5)
-                    }
+                        .background(Color(hex: "#C4A484"))
+                        .listRowBackground(Color(hex: "#C4A484"))
+                        
+                    }  
+                 
                 }
                 .navigationTitle("Calculator")
+                .onAppear{
+                    UITableView.appearance().backgroundColor = UIColor.blue // This changes the background of the entire List view
+                                        UITableViewCell.appearance().backgroundColor = .clear //
+                    
+                }
             }
+            .background(Color(hex: "#C4A484"))
+            .scrollContentBackground(.hidden)
         }
     }
     struct calc_Previews: PreviewProvider {

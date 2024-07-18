@@ -16,11 +16,11 @@ struct AboutView: View {
         Spacer()
           .frame(height: UIScreen.main.bounds.height / 14)
         Text("Meet the Team!")
-          .font(.largeTitle)
-          .fontWeight(.bold)
-          .multilineTextAlignment(.center)
-          .padding(.bottom, 21)
-          .foregroundColor(Color(hex: "#5C4033"))
+              .font(.largeTitle)
+              .fontWeight(.bold)
+              .multilineTextAlignment(.center)
+              .padding(.bottom, 21)
+              .foregroundColor(Color(hex: "#5C4033"))
     
         }
         .padding(.top, 20)

@@ -12,7 +12,22 @@
 //  Created by Rakshana then I, Nicole Phan, made a copy on 17/07/24
 //
 
+
 import SwiftUI
+//
+//@main
+//struct MyApp: App {
+//    init() {
+//        UITabBar.appearance().tintColor = UIColor(red: 0.36, green: 0.25, blue: 0.20, alpha: 1.0) // Hex #5C4033
+//    }
+//    
+//    var body: some Scene {
+//        WindowGroup {
+//            ContentView()
+//        }
+//    }
+//}
+
 struct ContentView: View {
   var body: some View {
       TabView {
@@ -90,6 +105,7 @@ struct ContentView: View {
           NavigationLink(destination: ProfileView()) {
             Text("Enter")
               .font(.headline)
+              .fontWeight(.bold)
               .padding()
               .frame(maxWidth: 215)
               .background(Color(hex: "#C4A484"))
@@ -123,6 +139,10 @@ struct ContentView: View {
       self.init(red: r, green: g, blue: b)
     }
   }
+
+
+
+
   #Preview {
     ContentView()
   }
